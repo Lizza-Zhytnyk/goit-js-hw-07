@@ -41,7 +41,7 @@ instance.show()
        }
 
     }
-   return gallery.removeEventListener;
+   return document.removeEventListener;
 }
 
 

@@ -33,13 +33,15 @@ function clickEvent(event) {
 `)
 instance.show()
 
-    gallery.addEventListener('keydown', modalClose);
+    document.addEventListener('keydown', modalClose);
 
     function modalClose(event) {
         if (event.code === 'Escape') {
          instance.close()  
        }
+
     }
+   return gallery.removeEventListener;
 }
 
 

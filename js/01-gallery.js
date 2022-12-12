@@ -21,6 +21,7 @@ gallery.insertAdjacentHTML("beforeend", imageItem);
   
 gallery.addEventListener('click', clickEvent);
 
+
 function clickEvent(event) {
     event.preventDefault();
 
@@ -29,8 +30,12 @@ function clickEvent(event) {
     }
 
     const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600">
-`)
+    <img src="${event.target.dataset.source}" width="800" height="600">`,
+      {
+        onShow: () => document.addEventListener('keydown', modalClose),
+      onClose: () => document.removeEventListener('keydown', modalClose), 
+
+})
 instance.show()
 
     document.addEventListener('keydown', modalClose);
@@ -41,7 +46,7 @@ instance.show()
        }
 
     }
-   return document.removeEventListener;
 }
+
 
 
